@@ -40,7 +40,7 @@
         FreeSetbodyTime: 0,
         FreeFreezeTime: 0,
         FreeSlowTime: 0,
-        AudioArr: ["zombie_falling_1"],
+        AudioArr: [],
         CanPass: function(d, c) {
             return c && c != 2
         },
@@ -227,7 +227,7 @@
         },
         NormalDie: function() {
             var c = this;
-            PlayAudio("zombie_falling_1");
+            //PlayAudio("zombie_falling_1");
             c.EleBody.src = c.PicArr[c.DieGif] + Math.random();
             oSym.addTask(250, ClearChild, [c.Ele]);
             c.HP = 0;

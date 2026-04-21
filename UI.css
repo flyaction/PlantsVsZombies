@@ -2,7 +2,7 @@
 td{font-family:Verdana;font-size:12px}
 div{left:0}
 #preloader{position: fixed;top:0;left:0;right:0;bottom:0;z-index:999;}
-#status {background-image:url(images/interface/预加载.jpg);background-repeat:no-repeat;background-position:center;z-index:999;}
+#status {background-image:url(images/interface/Logo.png);background-repeat:no-repeat;background-position:center;z-index:999;}
 
 span{cursor:default;}
 span,div,h2,h3{padding:0;margin:0}
@@ -72,9 +72,9 @@ position:absolute;width:900px;height:0px;top:500px;left:0;z-index:100;text-align
 #iSurfaceBackground .handbook{position:absolute;background:url(images/interface/SelectorScreen_Almanac_32.png) no-repeat;_background:url(images/interface/SelectorScreen_Almanac_8.png) no-repeat;left:374px;top:428px;width:99px;height:99px;cursor:pointer}
 #ZombieHand{position:absolute;width:330px;height:330px;left:262px;top:264px;display:none;overflow:hidden}
 #dName{position:absolute;left:35px;width:230px;top:93px;height:25px;text-align:center;color:#FC6;font-weight:bold;font-size:18px;font-family:微软雅黑,Verdana,Tahoma}
-#dNameDiv0{position:absolute;left:20px;top:-260px;width:293px;height:260px;background:url(images/interface/SelectorScreen_WoodSign1_32.png) no-repeat;_background:url(images/interface/SelectorScreen_WoodSign1_32.png) no-repeat}
-#dNameDiv1{cursor:pointer;position:absolute;left:3px;top:96px;width:291px;height:71px;background:url(images/interface/SelectorScreen_WoodSign2_32.png) no-repeat;_background:url(images/interface/SelectorScreen_WoodSign2_8.png) no-repeat}
-#dNameDiv2{position:absolute;left:14px;top:136px;width:293px;height:150px;background:url(images/interface/SelectorScreen_WoodSign3_32.png) no-repeat;_background:url(images/interface/SelectorScreen_WoodSign3_8.png) no-repeat;overflow:hidden}
+#dNameDiv0{position:absolute;left:20px;top:-260px;width:293px;height:260px;_background:url(images/interface/SelectorScreen_WoodSign1_32.png) no-repeat}
+#dNameDiv1{cursor:pointer;position:absolute;left:3px;top:96px;width:291px;height:71px;_background:url(images/interface/SelectorScreen_WoodSign2_8.png) no-repeat}
+#dNameDiv2{position:absolute;left:14px;top:136px;width:293px;height:150px;_background:url(images/interface/SelectorScreen_WoodSign3_8.png) no-repeat;overflow:hidden}
 
 #dSurfaceBack{position:absolute;top:0;width:0;height:0;z-index:255}
 #dHelp{width:814px;height:599px;background:url(images/interface/Help.png) no-repeat;position:absolute;display:none;left:133px;top:70px}

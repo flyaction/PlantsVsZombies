@@ -2562,7 +2562,7 @@ PausedAudioArr = [],
 NewAudio = $User.HTML5 ?
 function(b) {
     var a = b.source;
-    if (oAudio[a]) {
+    if (!a || oAudio[a]) {
         return
     }
     var f = document.createElement("audio"),
@@ -2617,6 +2617,9 @@ function(b) {
 },
 PlayAudio = $User.HTML5 ?
 function(c, a) {
+    if (!c) {
+        return;
+    }
     var b = oAudio[c];
     b ? (b.loop = !!a, b.play().catch(function(e) {
         console.log("音频播放失败:", c, e);
