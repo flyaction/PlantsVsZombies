@@ -8,7 +8,7 @@ server{
     listen 80;  # 指定端口，nginx默认端口为80
     server_name domain.com;  # 指定域名
     location / {
-        root /usr/share/nginx/html/NewPvzJs-v1.6;  # 指定静态网站根目录
+        root /usr/share/nginx/html/PlantsVsZombies;  # 指定静态网站根目录
     }
 }
 ```
@@ -17,7 +17,7 @@ server{
 cd /usr/share/nginx/html
 ```
 ```
-git clone https://github.com/miles-lin/NewPvzJs-v1.6.git
+git clone git@github.com:flyaction/PlantsVsZombies.git
 ```
 3、重新加载nginx配置文件
 ```
