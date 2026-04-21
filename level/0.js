@@ -22,15 +22,19 @@
         }); (function() {
             var b = $("JSProcess"),
             c = $("dProcess2");
-            b ? ($User.Browser.IE ? b.onreadystatechange = function() {
-                b.readyState == "loaded" && ClearChild(b)
-            }: b.onload = function() {
-                ClearChild(b)
-            },
-            b.onerror = function() {
-                ClearChild(this)
-            },
-b.src = "" + Math.random()) : $("").innerHTML = oS.Version
+            if (b) {
+                $User.Browser.IE ? b.onreadystatechange = function() {
+                    b.readyState == "loaded" && ClearChild(b)
+                }: b.onload = function() {
+                    ClearChild(b)
+                };
+                b.onerror = function() {
+                    ClearChild(this)
+                };
+                b.src = "" + Math.random();
+            } else if (oS.Version) {
+                console.log("Game Version: " + oS.Version);
+            }
         })();
         $("dServer") && SetBlock($("dServer"))
     }

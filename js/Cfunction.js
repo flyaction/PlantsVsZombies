@@ -2130,14 +2130,15 @@ LoadLvl = function(e, c) {
     e = e || 0;
     $("dServer") && e != 0 && SetNone($("dServer"));
     oSym.Init(function(g, f) { (f = $("JSPVZ")) && ClearChild(f);
-        NewEle("JSPVZ", "script", 0, {
-            src: "level/" + (oS.Lvl = g) + ".js",
-            type: "text/javascript"
+            NewEle("JSPVZ", "script", 0, {
+                    src: "level/" + (oS.Lvl = g) + ".js",
+                    type: "text/javascript"
+                },
+                document.getElementsByTagName("head").item(0))
         },
-        document.getElementsByTagName("head").item(0))
-    },
-    [e && b ? 0 : e]);
-    $("aLvlLink").href = "html/2-1" + (e && !isNaN(e) ? "-" + e: "") + ".htm"
+        [e && b ? 0 : e]);
+    var linkElement = $("aLvlLink");
+    linkElement && (linkElement.href = "html/2-1" + (e && !isNaN(e) ? "-" + e: "") + ".htm")
 },
 AppearTombstones = function(n, e, m) {
     var r = oGd.$Tombstones,
@@ -2601,11 +2602,15 @@ function(b) {
 
             a.currentTime = 0
         } catch(c) {}
-        a.play()
+        a.play().catch(function(e) {
+            console.log("音乐播放失败，等待用户交互:", e);
+        })
     } else {
 
         NewMusic(b);
-        oAudio[b].play()
+        oAudio[b].play().catch(function(e) {
+            console.log("音乐播放失败，等待用户交互:", e);
+        })
     }
 }: function(a) {
     NewMusic(a)
@@ -2613,10 +2618,14 @@ function(b) {
 PlayAudio = $User.HTML5 ?
 function(c, a) {
     var b = oAudio[c];
-    b ? (b.loop = !!a, b.play()) : (NewAudio({
+    b ? (b.loop = !!a, b.play().catch(function(e) {
+        console.log("音频播放失败:", c, e);
+    })) : (NewAudio({
         source: c,
         loop: !!a
-    })).play()
+    })).play().catch(function(e) {
+        console.log("音频播放失败:", c, e);
+    })
 }: function() {},
 PauseAudio = $User.HTML5 ?
 function(a) {
